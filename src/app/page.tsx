@@ -1,5 +1,6 @@
 import DisabledFeaturesCard from "@/components/disabledFeaturesCard";
 import FeaturesCard from "@/components/featuresCard";
+import HomeBanner from "@/components/homeBanner";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         />
         <DisabledFeaturesCard />
       </div>
+      <hr className="w-full my-[52px]" />
+      <HomeBanner />
     </div>
   );
 }
