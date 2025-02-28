@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
 
 export default function HomeBanner() {
   return (
@@ -26,6 +25,7 @@ export default function HomeBanner() {
         width={208}
         height={208}
         priority
+        className="text-primary"
       />
     </div>
   );

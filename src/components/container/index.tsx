@@ -5,7 +5,7 @@ export default function Container({
 }>) {
   return (
     <div className="flex justify-center p-6">
-      <div className="w-[820px]">{children}</div>
+      <div className="w-[820px] pt-14">{children}</div>
     </div>
   );
 }

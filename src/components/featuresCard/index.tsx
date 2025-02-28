@@ -1,14 +1,21 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Props {
   imageSrc: string;
   title: string;
   badges: string[];
+  url: string;
 }
 
 export default function FeaturesCard(props: Props) {
+  const router = useRouter();
   return (
-    <div className="border hover:border-primary transition duration-150 p-4 rounded-lg cursor-pointer w-[257px]">
+    <div
+      onClick={() => router.push(props.url)}
+      className="border hover:border-primary transition duration-150 p-4 rounded-lg cursor-pointer w-[257px]"
+    >
       <Image
         src={props.imageSrc}
         alt="Feature Image"
