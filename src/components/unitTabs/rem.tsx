@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 
 const pxList = [
-  1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 25, 28, 32, 36, 40, 44, 48,
-  50, 56, 64, 72, 80, 90, 100,
+  1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 28, 32, 36, 40, 44,
+  48, 50, 56, 64, 72, 75, 80, 90, 100,
 ];
 const remList = [
   0.01, 0.03, 0.05, 0.08, 0.1, 0.15, 0.2, 0.5, 1, 2, 3, 4, 5, 6, 8, 10, 15, 20,
@@ -15,12 +15,12 @@ const remList = [
 export default function Rem() {
   const [extendView, setExtendView] = useState(false);
 
-  const generateRem = (px: number, basis: number) => {
-    return +(px / basis).toFixed(3);
+  const generateRem = (px: number, base: number) => {
+    return +(px / base).toFixed(3);
   };
 
-  const generatePx = (px: number, basis: number) => {
-    return +(px * basis).toFixed(3);
+  const generatePx = (rem: number, base: number) => {
+    return +(rem * base).toFixed(3);
   };
 
   return (

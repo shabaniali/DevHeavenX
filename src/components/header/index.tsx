@@ -9,7 +9,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header className="p-6 flex justify-between border-b-[1px]">
+    <header className="p-6 sticky top-0 bg-white flex justify-between border-b-[1px]">
       <Image
         src="/images/linkedin.svg"
         alt="linkedin"
