@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Container from "@/components/container";
 import localFont from "next/font/local";
+import ScrollToTop from "@/components/scrollToTop";
 
 export const metadata: Metadata = {
   title: "DevHeavenX",
@@ -93,10 +94,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${swissFont.className} antialiased`}>
+      <body
+        className={`${swissFont.className} antialiased flex flex-col m-0 min-h-[100vh]`}
+      >
         <Header />
         <Container>{children}</Container>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
