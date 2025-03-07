@@ -58,7 +58,7 @@ export default function HexToRgb() {
             />
             <Button
               onClick={handleConvert}
-              className="h-12 font-light mr-4 px-6 rounded-[8px] hover:bg-white hover:text-primary hover:border-primary border shadow-none"
+              className="h-12 font-light mr-4 px-6 rounded-[8px] hover:bg-white hover:text-primary hover:border-primary hover:border shadow-none"
             >
               Convert
             </Button>
