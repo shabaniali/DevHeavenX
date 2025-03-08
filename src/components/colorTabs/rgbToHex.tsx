@@ -77,9 +77,9 @@ export default function RgbToHex() {
           />
         </div>
         <div className="flex gap-6 mt-6">
-          <Button className="h-12 font-light w-full rounded-[8px] hover:bg-white hover:text-primary hover:border-primary hover:border shadow-none">
+          {/* <Button className="h-12 font-light w-full rounded-[8px] hover:bg-white hover:text-primary hover:border-primary hover:border shadow-none">
             Convert
-          </Button>
+          </Button> */}
           <Button
             onClick={handleReset}
             className="h-12 rounded-[8px] w-full bg-muted shadow-none hover:bg-muted text-black"
