@@ -5,7 +5,7 @@ import HomeBanner from "@/components/homeBanner";
 export default function Home() {
   return (
     <>
-      <div className="flex gap-6">
+      <div className="flex gap-6 overflow-x-auto no-scrollbar w-full">
         <FeaturesCard
           imageSrc="/images/PXtoEM.svg"
           title="Pixel to EM"

@@ -14,7 +14,7 @@ export default function FeaturesCard(props: Props) {
   return (
     <div
       onClick={() => router.push(props.url)}
-      className="border hover:border-primary transition duration-150 p-4 rounded-lg cursor-pointer w-[257px]"
+      className="border hover:border-primary transition duration-150 p-4 rounded-lg cursor-pointer min-w-[257px]"
     >
       <Image
         src={props.imageSrc}
