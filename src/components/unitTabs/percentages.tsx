@@ -55,7 +55,7 @@ export default function Percentages() {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-center">
         <div className="w-[352px] h-[162] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
           <div className="font-light border-b border-[#FFFFFF33] pb-5 text-base">
             {inputUnit.label}
@@ -88,7 +88,7 @@ export default function Percentages() {
           width={36}
           height={36}
           priority
-          className="cursor-pointer"
+          className="cursor-pointer mx-1 transform rotate-90 sm:rotate-0 my-8 sm:my-0 relative z-10"
           onClick={() => switchUints()}
         />
         <div className="w-[352px] h-[162] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
@@ -126,14 +126,14 @@ export default function Percentages() {
         Pixels
       </div>
       <div className="border p-6 gap-6 rounded-[8px]">
-        <h3 className="text-base font-normal">
+        <h3 className="text-[15px] sm:text-base font-normal">
           PX︎ - Percentages conversion tables
         </h3>
         <div className="flex gap-6 mt-4">
           <div className="flex-1">
             <div className="flex justify-between mb-2 px-2">
-              <span className="text-sm font-bold">PX</span>
-              <span className="text-sm font-bold">%</span>
+              <span className="sm:text-sm text-[13px] font-bold">PX</span>
+              <span className="sm:text-sm text-[13px] font-bold">%</span>
             </div>
             {pxList
               .filter((item) => extendView || item <= 16)
@@ -144,8 +144,10 @@ export default function Percentages() {
                     index % 2 === 0 && "bg-[#f5f5f5]"
                   }`}
                 >
-                  <span className="text-sm font-normal">{item} px</span>
-                  <span className="text-sm font-normal">
+                  <span className="sm:text-sm text-[13px] font-normal">
+                    {item} px
+                  </span>
+                  <span className="sm:text-sm text-[13px] font-normal">
                     {generatePercentage(item)} %
                   </span>
                 </div>
@@ -153,8 +155,8 @@ export default function Percentages() {
           </div>
           <div className="flex-1">
             <div className="flex justify-between mb-2 px-2">
-              <span className="text-sm font-bold">%</span>
-              <span className="text-sm font-bold">PX</span>
+              <span className="sm:text-sm text-[13px] font-bold">%</span>
+              <span className="sm:text-sm text-[13px] font-bold">PX</span>
             </div>
             {percentagesList.map((item, index) => (
               <div
@@ -163,8 +165,10 @@ export default function Percentages() {
                   index % 2 === 0 && "bg-[#f5f5f5]"
                 }`}
               >
-                <span className="text-sm font-normal">{item} %</span>
-                <span className="text-sm font-normal">
+                <span className="sm:text-sm text-[13px] font-normal">
+                  {item} %
+                </span>
+                <span className="sm:text-sm text-[13px] font-normal">
                   {generatePx(item)} px
                 </span>
               </div>

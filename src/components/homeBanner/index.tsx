@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function HomeBanner() {
@@ -10,7 +11,15 @@ export default function HomeBanner() {
         <p className="text-white text-[15px] font-extralight mt-2 text-center">
           You can connect with me on LinkedIn
         </p>
-        <div className="bg-white mt-7 select-none cursor-pointer w-max flex items-center py-[10px] px-4 rounded-[100px] mb-8 sm:mb-0">
+        <div
+          onClick={() => {
+            window.open(
+              "https://www.linkedin.com/in/arian-rezakhani/",
+              "_blank"
+            );
+          }}
+          className="bg-white mt-7 select-none cursor-pointer w-max flex items-center py-[10px] px-4 rounded-[100px] mb-8 sm:mb-0"
+        >
           <p className="mr-2 font-bold text-[15px]">contact me</p>
           <Image
             src="/images/arrow-right.svg"

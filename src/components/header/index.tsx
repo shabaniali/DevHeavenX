@@ -9,23 +9,27 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header className="p-6 sticky top-0 bg-white flex justify-between border-b-[1px]">
+    <header className="p-6 z-50 sticky top-0 bg-white flex items-center justify-between border-b-[1px]">
       <Image
         src="/images/linkedin.svg"
+        onClick={() => {
+          window.open("https://www.linkedin.com/in/arian-rezakhani/", "_blank");
+        }}
         alt="linkedin"
-        width={48}
-        height={48}
+        width={1}
+        height={1}
         priority
-        className="cursor-pointer"
+        className="cursor-pointer w-[44px] h-[44px] sm:w-[48px] sm:h-[48px]"
       />
       <Image
         src="/images/logo.svg"
         alt="logo"
-        width={201}
-        height={21}
+        width={1}
+        height={1}
         priority
+        className="w-[173px] h-[18px] sm:w-[201px] sm:h-[21px]"
       />
-      <div className="w-[48px] h-[48px]">
+      <div className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px]">
         {pathname !== "/" && (
           <div
             onClick={() => router.push("/")}
