@@ -6,7 +6,7 @@ import Rem from "@/components/unitTabs/rem";
 export default function UnitConverter() {
   return (
     <Tabs defaultValue="em">
-      <TabsList className="grid w-full grid-cols-3 mb-14">
+      <TabsList className="sm:grid w-full sm:grid-cols-3 mb-8">
         <TabsTrigger value="em">PX to EM</TabsTrigger>
         <TabsTrigger value="rem">PX to REM</TabsTrigger>
         <TabsTrigger value="percentages">PX to Percentages</TabsTrigger>
