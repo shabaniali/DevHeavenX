@@ -63,7 +63,7 @@ export default function Percentages() {
   return (
     <>
       <div className="flex flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-center">
-        <div className="w-[352px] h-[162] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
+        <div className="w-[352px] h-[162px] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
           <div className="font-light border-b border-[#FFFFFF33] pb-5 text-base">
             {inputUnit.label}
           </div>
@@ -99,7 +99,7 @@ export default function Percentages() {
           className="cursor-pointer mx-1 transform rotate-90 sm:rotate-0 my-8 sm:my-0 relative z-10"
           onClick={() => switchUints()}
         />
-        <div className="w-[352px] h-[162] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
+        <div className="w-[352px] h-[162px] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
           <div className="font-light border-b border-[#FFFFFF33] pb-5 text-base">
             {outputUnit.label}
           </div>
