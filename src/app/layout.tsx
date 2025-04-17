@@ -10,6 +10,11 @@ import { ToastContainer } from "react-toastify";
 export const metadata: Metadata = {
   title: "DevHeavenX",
   description: "DevHeavenX",
+  metadataBase: new URL(
+    process.env.NODE_ENV === "production"
+      ? "https://iamshabani.ir"
+      : "http://localhost:3000"
+  ),
 };
 
 const swissFont = localFont({
