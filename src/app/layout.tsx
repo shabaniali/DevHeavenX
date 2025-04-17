@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "DevHeavenX",
 };
 
-export const swissFont = localFont({
+const swissFont = localFont({
   src: [
     {
       path: "../assets/fonts/Swiss 721 Thin.otf",
