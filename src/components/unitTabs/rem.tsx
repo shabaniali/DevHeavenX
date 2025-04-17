@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { NumericFormat } from "react-number-format";
+import { toast } from "react-toastify";
 
 const pxList = [
   1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 28, 32, 36, 40, 44,
@@ -25,6 +26,11 @@ export default function Rem() {
     label: "REM",
     value: 0,
   });
+
+  const copy = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast("Copied!");
+  };
 
   const generateRem = (px: number) => {
     return +(px / base).toFixed(3);
@@ -78,6 +84,7 @@ export default function Rem() {
               width={24}
               height={24}
               priority
+              onClick={() => copy(JSON.stringify(inputUnit.value))}
               className="cursor-pointer"
             />
           </div>
@@ -108,6 +115,7 @@ export default function Rem() {
               width={24}
               height={24}
               priority
+              onClick={() => copy(JSON.stringify(outputUnit.value))}
               className="cursor-pointer"
             />
           </div>

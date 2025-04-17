@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import Container from "@/components/container";
 import localFont from "next/font/local";
 import ScrollToTop from "@/components/scrollToTop";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "DevHeavenX",
@@ -98,6 +99,12 @@ export default function RootLayout({
         className={`${swissFont.className} antialiased flex flex-col m-0 min-h-[100vh]`}
       >
         <Header />
+        <ToastContainer
+          position="top-center"
+          hideProgressBar
+          theme="dark"
+          autoClose={2000}
+        />
         <Container>{children}</Container>
         <Footer />
         <ScrollToTop />

@@ -4,9 +4,16 @@ import { useState } from "react";
 import { NumericFormat } from "react-number-format";
 import { Slider } from "../ui/slider";
 import { Button } from "../ui/button";
+import Image from "next/image";
+import { toast } from "react-toastify";
 
 export default function RgbToHex() {
   const [rgb, setRgb] = useState({ r: 255, g: 255, b: 255 });
+
+  const copy = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast("Copied!");
+  };
 
   const rgbToHex = (r: number, g: number, b: number): string => {
     return `#${((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1)}`;
@@ -39,9 +46,9 @@ export default function RgbToHex() {
               Type color{" "}
               {color === "r" ? "red" : color === "g" ? "green" : "blue"}
             </span>
-            <div className="w-full flex items-center">
+            <div className="w-full flex flex-col sm:flex-row items-center">
               <NumericFormat
-                className="border h-12 w-[187px] rounded-[8px] mr-6 px-2"
+                className="border h-12 sm:w-[187px] w-full rounded-[8px] mb-6 sm:mb-0 sm:mr-6 px-2"
                 value={rgb[color as "r" | "g" | "b"]}
                 onValueChange={(values) =>
                   handleChange(color as "r" | "g" | "b", values.floatValue || 0)
@@ -90,12 +97,30 @@ export default function RgbToHex() {
       </div>
       <div className="border border-t-0 rounded-b-[8px] p-6">
         <span className="flex items-center mb-1">Hex color</span>
-        <div className="bg-muted w-full h-12 flex items-center px-4 rounded-[8px]">
+        <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
           {rgbToHex(rgb.r, rgb.g, rgb.b)}
+          <Image
+            src="/images/copy-2.svg"
+            alt="copy"
+            width={24}
+            height={24}
+            priority
+            onClick={() => copy(rgbToHex(rgb.r, rgb.g, rgb.b))}
+            className="cursor-pointer"
+          />
         </div>
         <span className="flex items-center mb-1 mt-6">RGB color</span>
-        <div className="bg-muted w-full h-12 flex items-center px-4 rounded-[8px]">
+        <div className="bg-muted w-full h-12 flex justify-between items-center px-4 rounded-[8px]">
           rgb({rgb.r}, {rgb.g}, {rgb.b})
+          <Image
+            src="/images/copy-2.svg"
+            alt="copy"
+            width={24}
+            height={24}
+            priority
+            onClick={() => copy(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`)}
+            className="cursor-pointer"
+          />
         </div>
       </div>
     </>
