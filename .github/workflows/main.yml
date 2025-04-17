@@ -1,15 +1,13 @@
-name: Deploy Next.js to GitHub Pages
+name: Deploy
 
 on:
   push:
-    branches: [ main ]
-
-permissions:
-  contents: write
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,15 +20,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build and Export
-        run: |
-          npm run build
-          npm run export
-          touch out/.nojekyll
-          echo 'iamshabani.ir' > out/CNAME
+      - name: Build and export
+        run: npm run build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Prepare deployment folder
+        run: |
+          mv out ../out
+          rm -rf *
+          mv ../out/* .
+          echo 'iamshabani.ir' > CNAME
+
+      - name: Set Git identity
+        run: |
+          git config --local user.email "ali.shabani7811@gmail.com"
+          git config --local user.name "Ali Shabani"
+          git add -A
+          git commit -m "Deploy to gh-pages" || echo "No changes to commit"
+
+      - name: Push to gh-pages
+        uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages
+          force: true
