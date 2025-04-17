@@ -55,6 +55,7 @@ export default function Percentages() {
     setOutputUnit(temp);
   };
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     generateOutput();
   }, [base, inputUnit]);

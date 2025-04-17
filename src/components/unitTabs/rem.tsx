@@ -55,6 +55,7 @@ export default function Rem() {
     setOutputUnit(temp);
   };
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     generateOutput();
   }, [base, inputUnit]);
@@ -223,7 +224,7 @@ export default function Rem() {
             relative to the parent).
           </p>
           <br />
-          <p>REM is the newer unit, older browsers don't support it.</p>
+          <p>REM is the newer unit, older browsers don&apos;t support it.</p>
         </div>
       </div>
     </>

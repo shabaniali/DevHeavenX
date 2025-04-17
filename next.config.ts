@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   basePath: process.env.NODE_ENV === "production" ? "/DevHeavenX" : "",
   assetPrefix: process.env.NODE_ENV === "production" ? "/DevHeavenX/" : "",
 };
