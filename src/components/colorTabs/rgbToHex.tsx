@@ -89,7 +89,7 @@ export default function RgbToHex() {
           </Button> */}
           <Button
             onClick={handleReset}
-            className="h-12 rounded-[8px] w-full bg-muted shadow-none hover:bg-muted text-black"
+            className="h-12 font-normal rounded-[8px] w-full bg-[#e8e8e8] shadow-none hover:bg-muted text-black"
           >
             Reset
           </Button>

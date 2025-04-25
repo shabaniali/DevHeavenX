@@ -27,7 +27,8 @@ export default function Header() {
         width={1}
         height={1}
         priority
-        className="w-[173px] h-[18px] sm:w-[201px] sm:h-[21px]"
+        onClick={() => router.push("/")}
+        className="w-[173px] h-[18px] sm:w-[201px] sm:h-[21px] cursor-pointer"
       />
       <div className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px]">
         {pathname !== "/" && (

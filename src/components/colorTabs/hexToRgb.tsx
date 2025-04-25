@@ -66,13 +66,13 @@ export default function HexToRgb() {
             <div className="flex mt-6 sm:mt-0">
               <Button
                 onClick={handleConvert}
-                className="h-12 font-light w-full mr-4 px-6 rounded-[8px] hover:bg-white hover:text-primary hover:border-primary hover:border shadow-none"
+                className="h-12 font-normal w-full mr-4 px-6 rounded-[8px] hover:bg-white hover:text-primary border border-primary shadow-none"
               >
                 Convert
               </Button>
               <Button
                 onClick={handleReset}
-                className="h-12 rounded-[8px] w-full bg-muted shadow-none hover:bg-muted text-black px-5"
+                className="h-12 font-normal rounded-[8px] w-full bg-[#e8e8e8] shadow-none hover:bg-muted text-black px-5"
               >
                 Reset
               </Button>

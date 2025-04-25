@@ -64,7 +64,7 @@ export default function Rem() {
     <>
       <div className="flex flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-center">
         <div className="w-[352px] h-[162px] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
-          <div className="font-light border-b border-[#FFFFFF33] pb-5 text-base">
+          <div className="font-noraml border-b border-[#FFFFFF33] pb-5 text-base">
             {inputUnit.label}
           </div>
           <div className="flex justify-between">
@@ -100,7 +100,7 @@ export default function Rem() {
           onClick={() => switchUints()}
         />
         <div className="w-[352px] h-[162px] flex flex-col justify-between bg-primary rounded-2xl text-white p-6">
-          <div className="font-light border-b border-[#FFFFFF33] pb-5 text-base">
+          <div className="font-normal border-b border-[#FFFFFF33] pb-5 text-base">
             {outputUnit.label}
           </div>
           <div className="flex justify-between">
@@ -125,7 +125,7 @@ export default function Rem() {
       <div className="text-center mt-10 mb-14 text-sm font-normal">
         Calculation based on a font size of{" "}
         <NumericFormat
-          className="mx-1 pt- py-[5px] border rounded-[4px] w-8 text-center font-medium"
+          className="mx-1 pt- py-[5px] border rounded-[4px] w-8 text-center font-bold"
           defaultValue={base}
           allowNegative={false}
           onChange={(e) => {
