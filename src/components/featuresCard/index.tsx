@@ -22,6 +22,7 @@ export default function FeaturesCard(props: Props) {
         width={225}
         height={158}
         priority
+        className="rounded-[8px]"
       />
       <h2 className="text-[17px] font-bold mt-5">{props.title}</h2>
       <div className="flex gap-[10px] mt-10">
