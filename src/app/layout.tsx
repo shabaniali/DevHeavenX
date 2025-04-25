@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "DevHeavenX",
   metadataBase: new URL(
     process.env.NODE_ENV === "production"
-      ? "https://iamshabani.ir"
+      ? "https://devheavenx.com"
       : "http://localhost:3000"
   ),
 };
