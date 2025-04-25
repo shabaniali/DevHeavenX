@@ -117,7 +117,7 @@ export default function RgbToHex() {
           </Button>
         </div>
       </div>
-      <div className="border border-t-0 rounded-b-[8px] p-6">
+      <div className="border border-t-0 rounded-b-[8px] p-6 mb-14">
         <span className="flex items-center mb-1">Hex color</span>
         <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
           {rgbToHex(rgb.r, rgb.g, rgb.b)}
