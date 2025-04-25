@@ -9,7 +9,7 @@ export default function HomeBanner() {
           Arian Rezakhani
         </h3>
         <p className="text-white text-[15px] font-normal mt-2 text-center">
-          You can connect with me on LinkedIn
+          You can connect with me on Linkedin
         </p>
         <div
           onClick={() => {
