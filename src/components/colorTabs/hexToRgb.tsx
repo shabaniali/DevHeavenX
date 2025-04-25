@@ -81,7 +81,7 @@ export default function HexToRgb() {
           {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
       </div>
-      <div className="border border-t-0 rounded-b-[8px] p-6">
+      <div className="border border-t-0 rounded-b-[8px] mb-14 p-6">
         <div className="flex flex-col sm:flex-row gap-6 justify-between">
           <div className="flex flex-col w-full">
             <span className="flex items-center mb-1">
