@@ -6,7 +6,7 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 
 export default function HexToRgb() {
-  const [hex, setHex] = useState<string>("ffffff");
+  const [hex, setHex] = useState<string>("");
 
   const copy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -28,7 +28,7 @@ export default function HexToRgb() {
   };
 
   const [rgb, setRgb] = useState<{ r: number; g: number; b: number }>(
-    hexToRgb("ffffff")
+    hexToRgb("")
   );
   const [error, setError] = useState<string>("");
 
@@ -46,8 +46,8 @@ export default function HexToRgb() {
   };
 
   const handleReset = () => {
-    setHex("ffffff");
-    setRgb(hexToRgb("ffffff"));
+    setHex("");
+    setRgb(hexToRgb(""));
     setError("");
   };
 
@@ -89,16 +89,18 @@ export default function HexToRgb() {
               Red
             </span>
             <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
-              {rgb.r}
-              <Image
-                src="/images/copy-2.svg"
-                alt="copy"
-                width={24}
-                height={24}
-                priority
-                onClick={() => copy(JSON.stringify(rgb.r))}
-                className="cursor-pointer"
-              />
+              {rgb.r >= 0 && rgb.r}
+              {rgb.r >= 0 && (
+                <Image
+                  src="/images/copy-2.svg"
+                  alt="copy"
+                  width={24}
+                  height={24}
+                  priority
+                  onClick={() => copy(JSON.stringify(rgb.r))}
+                  className="cursor-pointer"
+                />
+              )}
             </div>
           </div>
           <div className="flex flex-col w-full">
@@ -107,16 +109,18 @@ export default function HexToRgb() {
               Green
             </span>
             <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
-              {rgb.g}
-              <Image
-                src="/images/copy-2.svg"
-                alt="copy"
-                width={24}
-                height={24}
-                priority
-                onClick={() => copy(JSON.stringify(rgb.g))}
-                className="cursor-pointer"
-              />
+              {rgb.g >= 0 && rgb.g}
+              {rgb.g >= 0 && (
+                <Image
+                  src="/images/copy-2.svg"
+                  alt="copy"
+                  width={24}
+                  height={24}
+                  priority
+                  onClick={() => copy(JSON.stringify(rgb.g))}
+                  className="cursor-pointer"
+                />
+              )}
             </div>
           </div>
           <div className="flex flex-col w-full">
@@ -125,39 +129,52 @@ export default function HexToRgb() {
               Blue
             </span>
             <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
-              {rgb.b}
-              <Image
-                src="/images/copy-2.svg"
-                alt="copy"
-                width={24}
-                height={24}
-                priority
-                onClick={() => copy(JSON.stringify(rgb.b))}
-                className="cursor-pointer"
-              />
+              {rgb.b >= 0 && rgb.b}
+              {rgb.b >= 0 && (
+                <Image
+                  src="/images/copy-2.svg"
+                  alt="copy"
+                  width={24}
+                  height={24}
+                  priority
+                  onClick={() => copy(JSON.stringify(rgb.b))}
+                  className="cursor-pointer"
+                />
+              )}
             </div>
           </div>
         </div>
         <div className="flex flex-col w-full mt-6">
           <span className="flex items-center mb-1">Css color</span>
           <div className="bg-muted w-full h-12 flex items-center justify-between px-4 rounded-[8px]">
-            rgb({rgb.r}, {rgb.g}, {rgb.b})
-            <Image
-              src="/images/copy-2.svg"
-              alt="copy"
-              width={24}
-              height={24}
-              priority
-              onClick={() => copy(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`)}
-              className="cursor-pointer"
-            />
+            {rgb.r >= 0 &&
+              rgb.g >= 0 &&
+              rgb.b >= 0 &&
+              `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}
+            {rgb.r >= 0 && rgb.g >= 0 && rgb.b >= 0 && (
+              <Image
+                src="/images/copy-2.svg"
+                alt="copy"
+                width={24}
+                height={24}
+                priority
+                onClick={() => copy(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`)}
+                className="cursor-pointer"
+              />
+            )}
           </div>
         </div>
         <div className="flex flex-col w-full mt-6">
           <span className="flex items-center mb-1">Color preview</span>
           <div
             className="w-full h-[135px] flex items-center px-4 rounded-[8px] border border-[#ECECEC]"
-            style={{ backgroundColor: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` }}
+            style={
+              rgb.r >= 0 && rgb.g >= 0 && rgb.b >= 0
+                ? {
+                    backgroundColor: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
+                  }
+                : {}
+            }
           />
         </div>
       </div>
